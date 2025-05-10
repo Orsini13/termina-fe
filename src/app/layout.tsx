@@ -1,27 +1,26 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ReownProvider } from '../providers/reownProvider';
+// app/layout.tsx
+import '@/styles/globals.css'// or '@/styles/globals.css'
+import { Inter } from 'next/font/google'
+import { Providers } from './providers'
 
+const inter = Inter({ subsets: ['latin'] })
 
-
-export const metadata: Metadata = {
-  title: "Termina",
-  description: "Gas abstraction with improved UI for degening experience.",
-};
-
+export const metadata = {
+  title: 'Termina – Simple DeFi with Gas Abstraction',
+  description:
+    'Onboard into the world of DeFi with our simple UX and gas abstraction technology.',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={` antialiased`}
-      >
-          <ReownProvider>{children}</ReownProvider>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
-  );
+  )
 }

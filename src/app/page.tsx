@@ -1,19 +1,20 @@
-import Footer from "@/components/Footer";
-import GetFamiliar from "@/components/landing/GetFamiliar";
-import Hero from "@/components/landing/Hero";
-import WhyTermina from "@/components/landing/WhyTermina";
-import NavBar from "@/components/NavBar";
+import React from 'react';
+import Navbar from '@/components/NavBar';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <>
-      <NavBar />
-      <div className="px-6">
-        <Hero />
-        <WhyTermina />
-        <GetFamiliar />
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <CTASection />
       <Footer />
-    </>
+    </div>
   );
 }
